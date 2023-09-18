@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Winner</title>
+    <link rel="stylesheet" href="hooray.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="winner-img">
+      <img src="./images/champion.svg" alt="" />
+      <img class="trophy" src="./images/trophy.svg" alt="" />
+    </div>
+
+    <div class="winner-text">
+      <h2>HURRAY!!</h2>
+      <p>YOU WON THE GAME</p>
+      <a href="index.html">
+        <button>PLAY AGAIN</button>
+      </a>
+    </div>
+    <div class="game-rule" id="game-rule">
+        <h2>Game Rules</h2>
+        <ul>
+          <li>
+            Rock beats scissors, scissors beat <br />
+            paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll <br />
+            count off “rock, paper, scissors, <br />
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle <br />
+            minor decisions or simply play to <br />
+            pass the time
+          </li>
+          <li>
+            If both players lay down the same<br />
+            hand, each player lays down another<br />
+            hand
+          </li>
+        </ul>
+        <div class="close-rule" id="close-rule">X</div>
+    </div>
+    <div class="rule-button" id="rule-button">RULES</div>
+</body>
+<script>
+    const openRule = document.getElementById("rule-button")
+    const cloaseRule = document.getElementById("close-rule")
+    const gameRule = document.getElementById("game-rule")
+
+    openRule.addEventListener("click", ()=>{
+        gameRule.style.visibility = "visible";
+    });
+    cloaseRule.addEventListener("click", ()=>{
+        gameRule.style.visibility = "hidden";
+    });
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="title">
+            <p>ROCK</p>
+            <p>PAPER</p>
+            <p>SCISSORS</p>
+        </div>
+
+        <div class="scoreboard">
+            <div class="score-div">
+                <p>
+                    COMPUTER <br />
+                    SCORE
+                </p>
+                <p class="score" id="computer-score">0</p>
+            </div>
+            <div class="score-div">
+                <p>
+                    YOUR <br />
+                    SCORE
+                </p>
+                <p class="score" id="your-score">0</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="game-rule" id="game-rule">
+        <h2>Game Rules</h2>
+        <ul>
+          <li>
+            Rock beats scissors, scissors beat <br />
+            paper, and paper beats rock.
+          </li>
+          <li>
+            Agree ahead of time whether you’ll <br />
+            count off “rock, paper, scissors, <br />
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            Use rock, paper, scissors to settle <br />
+            minor decisions or simply play to <br />
+            pass the time
+          </li>
+          <li>
+            If both players lay down the same<br />
+            hand, each player lays down another<br />
+            hand
+          </li>
+        </ul>
+        <div class="close-rule" id="close-rule">X</div>
+    </div>
+    <div class="rule-button" id="rule-button">RULES</div>
+    <a href="hooray.html" class="next" id="next"> NEXT </a>
+    </div>
+
+    <main>
+        <div class="play-game">
+            <button id="rock" class="rock">
+                <div><img src="/images/rock.png" alt="" /></div>
+                <img src="./images/Line1.png" alt="" class="line1" />
+            </button>
+            <button id="scissor" class="scissor">
+                <div><img src="/images/scissor.png" alt="" /></div>
+                <img src="./images/Line2.png" alt="" class="line2" />
+            </button>
+            <button id="paper" class="paper">
+                <div><img src="/images/paper.png" alt="" /></div>
+                <img src="./images/Line3.png" alt="" class="line3" />
+            </button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

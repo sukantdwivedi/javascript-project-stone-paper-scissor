@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    background-color: #8cc461;
+    height: 100vh;
+    width: 100%;
+    padding-top: 3rem;
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+header {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #FFF;
+    border-radius: 10px;
+    padding: 1rem;
+}
+header .title {
+    color: #FFF;
+    font-size: 2rem;
+    font-weight: 500;
+}
+header .scoreboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+header .scoreboard .score-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 120px;
+    background: #FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+header .scoreboard .score-div .score {
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 2;
+}
+.rule-button {
+    border: 1px solid white;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+.next {
+    visibility: hidden;
+    cursor: pointer;
+    border: 1px solid white;
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+}
+.game-rule {
+    visibility: hidden;
+    position: absolute;
+    bottom: 6rem;
+    right: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border: 8px solid white;
+    border-radius: 10px;
+    padding: 1.5rem 2rem;
+    background-color: #004429;
+    z-index: 5;
+}
+.game-rule h2 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 400;
+}
+.game-rule ul {
+    list-style: none;
+    font-size: 1rem;
+    color: white;
+}
+.game-rule ul li {
+    margin-bottom: 1rem;
+}
+.game-rule ul li::before {
+    content: "\25A0";
+    color: #ffd600;
+    font-weight: bold;
+    display: inline-block;
+    width: 1rem;
+    margin-left: -1em;
+}
+.game-rule .close-rule {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    border: 6px solid white;
+    top: -50px;
+    right: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.play-game {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-areas:
+      "rock scissor"
+      "paper paper";
+    gap: 50px;
+    place-items: center;
+} 
+.rock{
+    grid-area: rock;
+}
+.scissor{
+    grid-area: scissor;
+}
+.paper{
+    grid-area: paper;
+}
+.play-game .rock, .paper, .scissor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 145px;
+    width: 145px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    position: relative;
+}
+.line1 {
+    position: absolute;
+    top: 50%;
+    right: -100px;
+    z-index: -1;
+}
+.line2 {
+    position: absolute;
+    bottom: -90px;
+    left: -10px;
+    z-index: -1;
+}
+.line3 {
+    position: absolute;
+    top: -90px;
+    left: -10px;
+    z-index: -1;
+}
+.play-game .rock {
+    background-color: #0074b6;
+}
+.play-game .scissor {
+    background-color: #bd00ff;
+}
+.play-game .paper {
+    background-color: #ffa943;
+}
+.play-game .rock div, .paper div, .scissor div {
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.gameResult {
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gameResult .userPick {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #66b248;
+}
+.userPickText {
+    position: absolute;
+    color: white;
+    top: 30px;
+}
+.pcPickText {
+    position: absolute;
+    color: white;
+    top: -30px;
+}
+.gameResult .computerPick {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameResult .winResultText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+}
+.winResultText h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+}
+.winResultText p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+}
+.winResultText button {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.innerLose {
+    background-color: #ffa943;
+}
+.innerWin {
+    background-color: #bd00ff;
+}
+.innerLose, .innerWin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+}
+.fistInner {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #32a62f;
+}
+.secondInner {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #289a27;
+}
+.innerLose .resPlay, .innerWin .resPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+}
+.tieUp {
+    margin-top: 4rem;
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tieUp .userPickTieUp, .pcPickTieUp {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0074b6;
+    position: relative;
+}
+.tieUp .userPickTieUp div, .pcPickTieUp div {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+.tieUp .tieUpResText {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+.tieUp .tieUpResText h3 {
+    font-size: 3rem;
+    color: white;
+    font-weight: bold;
+}
+.tieUp .tieUpResText button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: #6b6b6b;
+    cursor: pointer;
+}
+.userPickTieUp .tieUpText, .pcPickTieUp .tieUpText {
+    position: absolute;
+    top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+a {
+    text-decoration: none;
+    color: white;
+}

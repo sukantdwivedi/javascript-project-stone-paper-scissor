@@ -1,0 +1,47 @@
+.winner-img {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+.winner-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.winner-img .trophy {
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height: 15rem;
+}
+.winner-text {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.winner-text h2 {
+    font-size: 6rem;
+}
+.winner-text p {
+    font-size: 3rem;
+}
+.winner-text a {
+    position: absolute;
+    text-decoration: none;
+    color: white;
+    bottom: -4rem;
+  
+    left: 50%;
+    transform: translateX(-50%);
+}
+.winner-text a button {
+    border-radius: 10px;
+    color: #6b6b6b;
+    padding: 0.7rem 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
